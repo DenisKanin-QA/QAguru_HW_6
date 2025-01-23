@@ -31,9 +31,9 @@ def test_dark_theme_by_time_and_user_choice():
     elif dark_theme_enabled_by_user is None:
         if current_time >= time(hour=22) or current_time <= time(hour=6):
             is_dark_theme = True
-        elif:
+        else:
             is_dark_theme = False
-    elif:
+    else:
         is_dark_theme = False
 
     assert is_dark_theme is True
@@ -64,7 +64,7 @@ def test_find_suitable_user():
 
     def find_all_users_under_20(age):
         new_list = []
-        for j in users
+        for j in users:
             if j['age'] < age:
                 new_list.append(j)
             return new_list
@@ -108,4 +108,7 @@ def find_registration_button_on_login_page(page_url, button_text):
     assert actual_result == "Find Registration Button On Login Page [https://companyname.com/login, Register]"
 
 def print_function_name_and_args(func, *args):
-    func_name = func.__name__.replace('_',' ').
+    func_name = func.__name__.replace('_',' ').title()
+    args_name=", ".join([*args])
+    print(f"{func_name} [{args_name}]")
+    return f"{func_name} [{args_name}]"
